@@ -1,7 +1,9 @@
 import type { MetadataRoute } from "next";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 
-const SITE_URL = "https://manuarora.in";
+import { siteConfig } from "@/lib/site-config";
+
+const SITE_URL = siteConfig.siteUrl;
 
 type BlogFrontMatter = {
   slug: string;
@@ -17,12 +19,6 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     },
     {
       url: `${SITE_URL}/blog`,
-    },
-    {
-      url: `${SITE_URL}/inspiration`,
-    },
-    {
-      url: `${SITE_URL}/sponsor`,
     },
   ];
 

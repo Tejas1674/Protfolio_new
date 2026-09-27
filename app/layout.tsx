@@ -15,30 +15,29 @@ const geist = Geist({ subsets: ["latin"], variable: "--font-sans" });
 const analyticsDomain = process.env.NEXT_PUBLIC_ANALYTICS_DOMAIN;
 const analyticsScriptUrl = process.env.NEXT_PUBLIC_ANALYTICS_SCRIPT_URL;
 
-const siteUrl = "https://manuarora.in";
+import { siteConfig } from "@/lib/site-config";
+
+const siteUrl = siteConfig.siteUrl;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "Manu Arora - Developer, writer, creator.",
-    template: "%s – Manu Arora",
+    default: `${siteConfig.name} - ${siteConfig.title}`,
+    template: `%s – ${siteConfig.name}`,
   },
-  description:
-    "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+  description: siteConfig.description,
   openGraph: {
-    title: "Manu Arora - Developer, writer, creator.",
-    description:
-      "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+    title: `${siteConfig.name} - ${siteConfig.title}`,
+    description: siteConfig.description,
     url: siteUrl,
-    siteName: "Manu Arora",
+    siteName: siteConfig.name,
     locale: "en_US",
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Manu Arora - Developer, writer, creator.",
-    description:
-      "Full-Stack developer, JavaScript enthusiast, Freelancer and a Learner.",
+    title: `${siteConfig.name} - ${siteConfig.title}`,
+    description: siteConfig.description,
   },
 };
 

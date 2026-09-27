@@ -1,0 +1,53 @@
+---
+title: "Test Automation and CI/CD with Azure DevOps"
+publishedAt: "2025-02-10"
+summary: "Building a test automation strategy with xUnit and NUnit that reduced deployment failures by 40% and release cycle time by 30%."
+---
+
+Shipping fast without breaking things is the eternal engineering challenge. Here's how we built a test automation strategy that meaningfully improved our release confidence.
+
+## The Problem
+
+Before structured test automation, our team relied heavily on manual regression testing before each release. This meant:
+
+- Long release cycles (days, not hours)
+- Frequent deployment failures caught in staging
+- Engineers spending more time testing than building
+
+## The Strategy
+
+We defined a three-tier testing approach:
+
+### Unit Tests (xUnit)
+
+Every service layer method gets unit tests. We mock dependencies using interfaces (thanks, dependency injection) and focus on business logic edge cases.
+
+### Integration Tests (NUnit)
+
+API endpoints are tested against a test database with realistic data scenarios. County onboarding flows, RBAC enforcement, and duplicate detection all have integration coverage.
+
+### In-Sprint Automation
+
+The game-changer was moving test writing into the sprint, not after it. Every feature ships with its tests. No "we'll add tests later" — later never comes.
+
+## CI/CD Pipeline
+
+Our Azure DevOps pipeline runs on every pull request:
+
+1. **Build** — Compile all projects, restore NuGet packages
+2. **Test** — Run xUnit and NUnit suites in parallel
+3. **Analyze** — SonarQube quality gate check
+4. **Deploy** — Auto-deploy to staging on merge to main
+5. **Smoke test** — Post-deployment health checks
+
+## Results
+
+The numbers speak for themselves:
+
+- **40% reduction** in deployment failures
+- **30% faster** release cycle time
+- **Zero critical defects** in production releases over the past year
+
+## Key Takeaways
+
+Make testing part of the definition of done. Invest in fast, reliable CI pipelines. And celebrate when tests catch bugs before production — that's the whole point.

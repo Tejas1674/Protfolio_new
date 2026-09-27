@@ -1,88 +1,59 @@
 import React from "react";
 import { Box } from "./box";
 import Link from "next/link";
-import { IconBrandYoutube } from "@tabler/icons-react";
+import {
+  IconBuildingSkyscraper,
+  IconMapPin,
+  IconSettingsAutomation,
+} from "@tabler/icons-react";
 import { Subheading } from "./subheading";
-
-const LogoSVGNew = ({ className }: { className?: string }) => {
-  return (
-    <svg
-      width="208"
-      height="160"
-      viewBox="48 48 160 160"
-      fill="none"
-      xmlns="http://www.w3.org/2000/svg"
-      className={className}
-    >
-      <path
-        d="M146 48H106.136L48 208H87.8644L116.932 128C116.932 128 122 114.5 124.4 108L131.466 88L146 48Z"
-        fill="currentColor"
-      />
-      <path d="M110 48H149.864L168.032 98H127.84L110 48Z" fill="currentColor" />
-      <path
-        d="M139.587 113.833L171.458 208H208L172.807 113.833H139.587Z"
-        fill="currentColor"
-      />
-      <path d="M173 114L140.8 208H104L139.545 114H173Z" fill="currentColor" />
-    </svg>
-  );
-};
 
 const workItems = [
   {
-    href: "https://aceternity.com",
-    title: "Aceternity",
-    description: "Design + Dev studio for startups and enterprises.",
+    href: "https://www.firstam.com",
+    title: "First American India",
+    description:
+      "Software Engineer — ASP.NET Core 8 microservices & React.js for US county-level financial data platforms.",
     icon: (
-      <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-    ),
-    boxClassName: "",
-  },
-  {
-    href: "https://ui.aceternity.com",
-    title: "Aceternity UI",
-    description: "Component library for modern websites.",
-    icon: (
-      <LogoSVGNew className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      <IconBuildingSkyscraper className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
     ),
     boxClassName:
-      "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+      "bg-linear-to-b from-blue-400 to-blue-600 ring-offset-blue-500",
   },
   {
-    href: "https://ai.aceternity.com",
-    title: "Acebuilder",
-    description: "AI landing page builder with exportable code.",
+    href: "#",
+    title: "Geo Tools",
+    description:
+      "County creation module with automated onboarding, duplicate detection, and RBAC — 50% effort reduction.",
     icon: (
-      <img
-        src="/acebuilder-light.png"
-        alt=""
-        className="size-4 invert drop-shadow-xl drop-shadow-black/40"
-      />
+      <IconMapPin className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
     ),
     boxClassName:
       "bg-linear-to-b from-emerald-400 to-emerald-600 ring-offset-emerald-500",
   },
   {
-    href: "https://youtube.com/@manuarora",
-    title: "YouTube",
-    description: "I talk about design engineering and SaaS.",
+    href: "#",
+    title: "NGS 2.0",
+    description:
+      "Enterprise rule configuration system on microservices — 98% data accuracy with full compliance audit trail.",
     icon: (
-      <IconBrandYoutube className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      <IconSettingsAutomation className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
     ),
-    boxClassName: "bg-linear-to-b from-red-400 to-red-600 ring-offset-red-500",
+    boxClassName:
+      "bg-linear-to-b from-violet-400 to-violet-600 ring-offset-violet-500",
   },
 ];
 
 export const Work = () => {
   return (
     <div>
-      <Subheading>Things I do</Subheading>
+      <Subheading>Work & Projects</Subheading>
       <div className="mt-4 flex flex-col gap-6 md:gap-4">
         {workItems.map((item) => (
           <Link
-            key={item.href}
+            key={item.title}
             href={item.href}
-            target="_blank"
+            target={item.href.startsWith("http") ? "_blank" : undefined}
             className="flex flex-col items-start gap-1 md:flex-row md:items-center md:gap-2"
           >
             <Box className={`mr-4 ${item.boxClassName}`}>{item.icon}</Box>

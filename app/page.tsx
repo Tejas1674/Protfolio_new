@@ -14,9 +14,11 @@ type HomeBlogPost = {
   title: string;
 };
 
+import { siteConfig } from "@/lib/site-config";
+
 export const metadata: Metadata = {
-  title: "Manu Arora",
-  description: "Founder, Creator, YouTuber, Shitposter, and a Learner.",
+  title: siteConfig.name,
+  description: siteConfig.description,
   alternates: {
     canonical: "/",
   },

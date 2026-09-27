@@ -5,10 +5,12 @@ import { DottedSeparator } from "@/components/separator";
 import { BlogIndex, type BlogIndexPost } from "@/components/blog/blog-index";
 import { getAllFilesFrontMatter } from "@/lib/mdx";
 
+import { siteConfig } from "@/lib/site-config";
+
 export const metadata: Metadata = {
-  title: "Blog - Manu Arora",
+  title: `Blog - ${siteConfig.name}`,
   description:
-    "Notes on software, design engineering, freelancing, and things I learn while building.",
+    "Notes on full stack development, .NET microservices, React, and test automation.",
   alternates: {
     canonical: "/blog",
   },
@@ -22,8 +24,8 @@ export default async function BlogPage() {
       <Container className="min-h-screen">
         <Subheading className="mt-4">My thoughts on things</Subheading>
         <p className="text-foreground pt-4 text-base">
-          I occasionally write here and talk about things that I want to share on
-          my personal space.
+          I write about full stack development, microservices architecture, and
+          lessons learned building enterprise applications.
         </p>
 
         <BlogIndex posts={posts} />

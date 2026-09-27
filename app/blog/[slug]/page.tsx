@@ -2,7 +2,9 @@ import type { Metadata } from "next";
 import { getFiles, getFileBySlug } from "@/lib/mdx";
 import BlogPostClient from "./BlogPostClient";
 
-const siteUrl = "https://manuarora.in";
+import { siteConfig } from "@/lib/site-config";
+
+const siteUrl = siteConfig.siteUrl;
 
 type PostFrontMatter = {
   title: string;

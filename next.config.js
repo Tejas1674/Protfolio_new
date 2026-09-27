@@ -3,9 +3,11 @@ const path = require("path");
 module.exports = {
   images: {
     remotePatterns: [
-      { protocol: "https", hostname: "assets.aceternity.com" }, // Aceternity Avatar
-      { protocol: "https", hostname: "pbs.twimg.com" }, // Twitter Profile Picture
-      { protocol: "https", hostname: "api.microlink.io" }, // Microlink Image Preview
+      { protocol: "https", hostname: "assets.aceternity.com" },
+      { protocol: "https", hostname: "pbs.twimg.com" },
+      { protocol: "https", hostname: "api.microlink.io" },
+      { protocol: "https", hostname: "github.com" },
+      { protocol: "https", hostname: "avatars.githubusercontent.com" },
     ],
   },
   outputFileTracingRoot: path.join(__dirname),

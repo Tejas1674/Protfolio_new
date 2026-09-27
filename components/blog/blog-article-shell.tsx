@@ -1,6 +1,4 @@
-"use client";
-
-import Link from "next/link";
+import { siteConfig } from "@/lib/site-config";
 import { format, parseISO } from "date-fns";
 import { IconArrowLeft } from "@tabler/icons-react";
 import Container from "@/components/container";
@@ -36,7 +34,7 @@ export function BlogArticleShell({
           </p>
         ) : null}
         <div className="text-foreground/50 mt-4 flex flex-wrap items-baseline gap-x-3 gap-y-1 font-mono text-xs">
-          <span>Manu Arora</span>
+          <span>{siteConfig.name}</span>
           <span aria-hidden className="text-foreground/30">
             ·
           </span>

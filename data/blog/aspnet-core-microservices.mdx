@@ -1,0 +1,40 @@
+---
+title: "Building Scalable Microservices with ASP.NET Core 8"
+publishedAt: "2025-06-15"
+summary: "Patterns and practices for designing microservices with ASP.NET Core 8, including clean architecture, CQRS, and event-driven communication."
+---
+
+Microservices architecture has become the backbone of enterprise applications. At First American India, I've spent the past year building and maintaining ASP.NET Core 8 microservices that serve US county-level government clients.
+
+## Why Microservices?
+
+Monolithic applications work well for small teams and simple domains. But when you're dealing with financial data platforms that need independent scaling, deployment, and team ownership, microservices shine.
+
+Key benefits I've experienced firsthand:
+
+- **Independent deployment** — Ship one service without touching others
+- **Technology flexibility** — Pick the right tool per bounded context
+- **Fault isolation** — A failure in one service doesn't bring down the entire platform
+
+## Architecture Patterns
+
+### Clean Architecture + Repository Pattern
+
+Every service I build follows SOLID principles with a clear separation of concerns:
+
+- **Domain layer** — Entities, value objects, domain events
+- **Application layer** — Use cases, CQRS handlers, DTOs
+- **Infrastructure layer** — EF Core repositories, external API clients
+- **Presentation layer** — Minimal APIs or controllers with Swagger/OpenAPI
+
+### Event-Driven Communication
+
+For asynchronous decoupling, we use Azure Service Bus and Kafka. When a county is onboarded in Geo Tools, an event is published that NGS 2.0 consumes to configure financial policy rules — no direct coupling between services.
+
+## Performance Wins
+
+Through query optimization, distributed caching with Redis, and async/await multithreading, we improved backend throughput by 35%. Small changes like proper indexing and avoiding N+1 queries make a measurable difference at scale.
+
+## Takeaways
+
+Start with a well-defined bounded context. Invest in observability early (Application Insights is your friend). And always document your APIs with Swagger — your future self will thank you.

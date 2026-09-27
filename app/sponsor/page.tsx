@@ -8,7 +8,7 @@ import { LinkPreview } from "@/components/link-preview";
 import { DottedSeparator } from "@/components/separator";
 
 export const metadata: Metadata = {
-  title: "Sponsor - Manu Arora",
+  title: "Sponsor - Tejas Pinjarkar",
   description:
     "Partner with me to feature products I genuinely use and recommend to my audience.",
   alternates: {

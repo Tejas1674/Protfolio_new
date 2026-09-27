@@ -1,96 +1,90 @@
 import React from "react";
 import { Subheading } from "./subheading";
 import {
-  CursorIcon,
-  FireworksIcon,
-  HostingerIcon,
-  NeonIcon,
-  PosthogIcon,
-  ReplitIcon,
-  StrapiIcon,
-} from "./icons/general";
+  IconBrandDocker,
+  IconBrandReact,
+  IconCloud,
+  IconDatabase,
+  IconServer,
+} from "@tabler/icons-react";
 import { Box } from "./box";
 
 export const Companies = () => {
-  const companies = [
+  const technologies = [
     {
-      title: "Cursor",
-      description: "AI first code editor and development environment.",
+      title: ".NET / C#",
+      description:
+        "ASP.NET Core 8, Minimal APIs, CQRS, Clean Architecture, SOLID principles.",
       skeleton: (
-        <CursorIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-neutral-400 to-neutral-600 ring-offset-neutral-500",
-    },
-    {
-      title: "Replit",
-      description: "AI-powered platform to build and ship software.",
-      skeleton: (
-        <ReplitIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
-    },
-    {
-      title: "Neon",
-      description: "Fast Postgres Databases for Teams and Agents.",
-      skeleton: (
-        <NeonIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-green-400 to-green-600 ring-offset-green-500",
-    },
-    {
-      title: "Strapi",
-      description: "Open-Source headless CMS for apps.",
-      skeleton: (
-        <StrapiIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
-      ),
-      boxClassName:
-        "bg-linear-to-b from-violet-400 to-violet-600 ring-offset-violet-500",
-    },
-    {
-      title: "Hostinger",
-      description: "Web hosting and domains platform.",
-      skeleton: (
-        <HostingerIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconServer className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
         "bg-linear-to-b from-purple-400 to-purple-600 ring-offset-purple-500",
     },
     {
-      title: "Posthog",
-      description: "Open-Source product analytics platform.",
+      title: "React.js",
+      description:
+        "TypeScript, Redux, Material-UI, React Hooks, responsive & WCAG-compliant UIs.",
       skeleton: (
-        <PosthogIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconBrandReact className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
-        "bg-linear-to-b from-yellow-400 to-yellow-600 ring-offset-yellow-500",
+        "bg-linear-to-b from-cyan-400 to-cyan-600 ring-offset-cyan-500",
     },
     {
-      title: "Fireworks",
-      description: "Open-source AI models at blazing speed.",
+      title: "Azure Cloud",
+      description:
+        "App Service, Functions, Service Bus, Entra ID, Application Insights, CI/CD.",
       skeleton: (
-        <FireworksIcon className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconCloud className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-blue-400 to-blue-600 ring-offset-blue-500",
+    },
+    {
+      title: "Databases",
+      description:
+        "SQL Server, PostgreSQL, MongoDB, CosmosDB, Redis — query optimization & caching.",
+      skeleton: (
+        <IconDatabase className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-green-400 to-green-600 ring-offset-green-500",
+    },
+    {
+      title: "Microservices",
+      description:
+        "Event-driven architecture with Kafka, Azure Service Bus, and RabbitMQ.",
+      skeleton: (
+        <IconServer className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+      ),
+      boxClassName:
+        "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+    },
+    {
+      title: "DevOps",
+      description:
+        "Docker, Kubernetes, Azure DevOps, GitHub Actions, xUnit/NUnit test automation.",
+      skeleton: (
+        <IconBrandDocker className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
       boxClassName:
         "bg-linear-to-b from-indigo-400 to-indigo-600 ring-offset-indigo-500",
     },
   ];
+
   return (
     <section>
-      <Subheading>Companies I've worked with</Subheading>
+      <Subheading>Technologies I work with</Subheading>
       <div className="mt-6 grid grid-cols-2 gap-6 md:grid-cols-3">
-        {companies.map((company) => (
-          <div key={company.title} className="flex flex-col gap-3">
+        {technologies.map((tech) => (
+          <div key={tech.title} className="flex flex-col gap-3">
             <div className="flex items-center gap-2">
-              <Box className={company.boxClassName}>{company.skeleton}</Box>
-              <p className="text-foreground text-sm font-medium">
-                {company.title}
-              </p>
+              <Box className={tech.boxClassName}>{tech.skeleton}</Box>
+              <p className="text-foreground text-sm font-medium">{tech.title}</p>
             </div>
             <p className="text-foreground/70 text-sm text-pretty">
-              {company.description}
+              {tech.description}
             </p>
           </div>
         ))}

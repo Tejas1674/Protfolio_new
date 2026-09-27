@@ -7,12 +7,13 @@ import Link from "next/link";
 import { Box } from "./box";
 import { cn } from "@/lib/utils";
 import {
-  IconAppWindowFilled,
-  IconBrandZoom,
-  IconVideoFilled,
+  IconBrandGithub,
+  IconBrandLinkedin,
+  IconMailFilled,
 } from "@tabler/icons-react";
 import { AnimatePresence, motion } from "motion/react";
 import { SPRING_CONFIG } from "@/lib/motion-config";
+import { siteConfig } from "@/lib/site-config";
 
 type WorkItem = {
   title: string;
@@ -41,36 +42,36 @@ export const WorkWithMe = () => {
 
   const work: WorkItem[] = [
     {
-      title: "Consultation",
-      description: "Get on a paid call with me to discuss your things.",
+      title: "LinkedIn",
+      description: "Connect with me for professional opportunities.",
       type: "link",
-      href: "https://cal.com/manu-arora-lacvgj/hour",
+      href: siteConfig.linkedin,
       boxClassName:
         "bg-linear-to-b from-blue-400 to-blue-600 ring-offset-blue-500",
       skeleton: (
-        <IconBrandZoom className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconBrandLinkedin className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
     {
-      title: "Hire me and my team",
-      description: "Let's build a world class website for your business.",
+      title: "GitHub",
+      description: "Check out my projects and open-source contributions.",
       type: "link",
-      href: "https://aceternity.com",
+      href: siteConfig.github,
       boxClassName:
-        "bg-linear-to-b from-orange-400 to-orange-600 ring-offset-orange-500",
+        "bg-linear-to-b from-neutral-400 to-neutral-600 ring-offset-neutral-500",
       skeleton: (
-        <IconAppWindowFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconBrandGithub className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
     {
-      title: "Sponsor my video",
-      description: "Get your brand in front of my audience.",
+      title: "Email me",
+      description: "Drop me a line — I'll get back to you soon.",
       type: "copyEmail",
-      email: "manu@aceternity.com",
+      email: siteConfig.email,
       boxClassName:
         "bg-linear-to-b from-emerald-400 to-emerald-600 ring-offset-emerald-500",
       skeleton: (
-        <IconVideoFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
+        <IconMailFilled className="size-4 text-white drop-shadow-xl drop-shadow-black/40" />
       ),
     },
   ];
@@ -83,7 +84,7 @@ export const WorkWithMe = () => {
 
   return (
     <section className="">
-      <Subheading>Work with me</Subheading>
+      <Subheading>Get in touch</Subheading>
       {mounted ? createPortal(toast, document.body) : null}
       <div className="mt-8 flex flex-col gap-6">
         {work.map((item) => {
@@ -147,7 +148,7 @@ const CopyAnimation = () => {
       transition={SPRING_CONFIG}
       className="pointer-events-none fixed inset-x-0 bottom-20 z-200 mx-auto flex w-fit items-center justify-center gap-2 rounded-lg bg-linear-to-b from-blue-400 to-blue-600 p-4 text-center text-white shadow-lg ring-1 shadow-black/10 ring-white/50 ring-offset-2 ring-offset-blue-500 ring-inset"
     >
-      <EmailIcon /> Email Copied to clipboard
+      <EmailIcon /> Email copied to clipboard
     </motion.div>
   );
 };

@@ -1,11 +1,11 @@
 {
-  "name": "manuarora.in",
-  "description": "My personal blog and website",
+  "name": "tejas-pinjarkar-portfolio",
+  "description": "Personal portfolio website of Tejas Pinjarkar",
   "version": "1.0.0",
   "author": {
-    "name": "Manu Arora",
-    "email": "contact@manuarora.in",
-    "url": "https://manuarora.in"
+    "name": "Tejas Pinjarkar",
+    "email": "tejaspinjarkar2001@gmail.com",
+    "url": "https://github.com/Tejas1674"
   },
   "scripts": {
     "dev": "next dev --turbopack",
@@ -14,10 +14,9 @@
     "format": "prettier --write .",
     "format:check": "prettier --check ."
   },
-  "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/manuarora700/personal-portfolio.git"
+    "url": "git+https://github.com/Tejas1674/portfolio.git"
   },
   "dependencies": {
     "@radix-ui/react-hover-card": "^1.1.15",

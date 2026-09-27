@@ -1,0 +1,45 @@
+---
+title: "Building Enterprise React UIs with Redux and Material-UI"
+publishedAt: "2025-04-20"
+summary: "How to build accessible, responsive React.js frontends for enterprise applications using Redux, Material-UI, and WCAG compliance."
+---
+
+Enterprise frontends have different requirements than side projects. They need to handle complex state, enforce accessibility standards, and work across a wide range of devices and browsers.
+
+## The Stack
+
+For the platforms I work on at First American India, our frontend stack is:
+
+- **React.js** with TypeScript for type safety
+- **Redux** for predictable state management across complex workflows
+- **Material-UI** for a consistent, professional design system
+- **React Hooks** for clean, reusable component logic
+
+## State Management with Redux
+
+County onboarding workflows involve multi-step forms, validation states, API responses, and user permissions. Redux keeps this manageable:
+
+- Actions describe what happened
+- Reducers define how state changes
+- Selectors provide efficient data access
+- Middleware handles async API calls
+
+The key is keeping slices focused — one slice per feature domain, not one giant store.
+
+## Accessibility Matters
+
+WCAG compliance isn't optional in enterprise software. Government clients require accessible interfaces. Practical steps I follow:
+
+- Semantic HTML elements over div soup
+- Proper ARIA labels on interactive components
+- Keyboard navigation for all workflows
+- Sufficient color contrast ratios
+- Screen reader testing on critical paths
+
+## Responsive Design
+
+Our users work on everything from 4K monitors to tablets in the field. Material-UI's grid system and breakpoint utilities make responsive layouts straightforward, but the real work is in designing workflows that degrade gracefully on smaller screens.
+
+## Lessons Learned
+
+Invest in a component library early. Write integration tests for critical user flows. And always pair with backend developers on API contract design — the frontend experience starts with the API shape.

@@ -7,6 +7,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { DottedUnderline } from "./dotted-underline";
+import { siteConfig } from "@/lib/site-config";
 
 function isActivePath(pathname: string, href: string) {
   if (href === "/") return pathname === "/";
@@ -15,9 +16,7 @@ function isActivePath(pathname: string, href: string) {
 
 const links = [
   { title: "Home", href: "/" },
-  { title: "Inspiration", href: "/inspiration" },
   { title: "Blog", href: "/blog" },
-  { title: "Sponsor", href: "/sponsor" },
 ];
 
 export const Navbar = () => {
@@ -35,17 +34,18 @@ export const Navbar = () => {
           className="rounded-md bg-white shadow-md dark:bg-neutral-800"
         >
           <Image
-            src="https://assets.aceternity.com/avatars/manu.webp"
-            alt=""
+            src={siteConfig.avatar}
+            alt={siteConfig.name}
             width={40}
             height={40}
-            className="aspect-square size-6 rounded-md shadow-2xl"
+            unoptimized
+            className="aspect-square size-10 rounded-md object-cover shadow-2xl"
           />
         </motion.div>
         <h1 className="text-foreground text-xl font-medium tracking-tight md:text-2xl">
-          Manu Arora{" "}
-          <span className="text-foreground/50 font-normal">aka</span>{" "}
-          <span className="font-normal italic">Paaji</span>
+          {siteConfig.name}{" "}
+          <span className="text-foreground/50 font-normal">·</span>{" "}
+          <span className="font-normal italic">{siteConfig.tagline}</span>
         </h1>
       </div>
       <div className="flex items-center gap-4">

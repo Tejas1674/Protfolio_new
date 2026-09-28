@@ -83,7 +83,7 @@ export const WorkWithMe = () => {
   );
 
   return (
-    <section className="">
+    <section id="contact" className="scroll-mt-8">
       <Subheading>Get in touch</Subheading>
       {mounted ? createPortal(toast, document.body) : null}
       <div className="mt-8 flex flex-col gap-6">

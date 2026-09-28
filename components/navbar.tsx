@@ -16,14 +16,17 @@ function isActivePath(pathname: string, href: string) {
 
 const links = [
   { title: "Home", href: "/" },
+  { title: "Work", href: "/#work" },
+  { title: "Projects", href: "/#projects" },
   { title: "Blog", href: "/blog" },
+  { title: "Contact", href: "/#contact" },
 ];
 
 export const Navbar = () => {
   const pathname = usePathname();
 
   return (
-    <nav className="mx-auto flex max-w-2xl flex-col items-start gap-4 px-4 pt-4 md:pt-8">
+    <nav className="mx-auto flex max-w-2xl flex-col items-start gap-3 px-4 pt-3 md:pt-5">
       <div className="flex items-center gap-2 perspective-distant">
         <motion.div
           variants={GENERAL_VARIANT}
@@ -44,11 +47,11 @@ export const Navbar = () => {
         </motion.div>
         <h1 className="text-foreground text-xl font-medium tracking-tight md:text-2xl">
           {siteConfig.name}{" "}
-          <span className="text-foreground/50 font-normal">·</span>{" "}
-          <span className="font-normal italic">{siteConfig.tagline}</span>
+          {/* <span className="text-foreground/50 font-normal">·</span>{" "}
+          <span className="font-normal italic">{siteConfig.tagline}</span> */}
         </h1>
       </div>
-      <div className="flex items-center gap-4">
+      <div className="flex flex-wrap items-center gap-x-4 gap-y-2">
         {links.map((link) => {
           const active = isActivePath(pathname, link.href);
           return (
@@ -66,9 +69,7 @@ export const Navbar = () => {
               <DottedUnderline
                 className={cn(
                   "mask-x-from-90% transition-opacity duration-300",
-                  active
-                    ? "opacity-100"
-                    : "opacity-0 group-hover:opacity-100",
+                  active ? "opacity-100" : "opacity-0 group-hover:opacity-100",
                 )}
               />
             </Link>

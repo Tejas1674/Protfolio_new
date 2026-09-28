@@ -37,9 +37,9 @@ export default async function Home() {
       <DottedSeparator className="my-10" />
       <Companies />
       <DottedSeparator className="my-10" />
-      <WorkWithMe />
-      <DottedSeparator className="my-10" />
       <BlogList posts={posts} />
+      <DottedSeparator className="my-10" />
+      <WorkWithMe />
       <DottedSeparator className="my-10" />
     </Container>
   );
